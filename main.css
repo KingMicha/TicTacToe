@@ -1,0 +1,109 @@
+.board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+    justify-items: center; 
+}
+#newGame, .bBtn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    width: 100px;
+    height: 75px;
+}
+#newGame:not(.bBtn) {
+    border: black;
+    color: white;
+    background-color: black;
+}
+.bBtn{
+    color: white;
+    animation: blink alternate 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        border: blue;
+        background-color: blue;
+    }
+    100% {
+        border: red;
+        background-color: red;
+    }
+}
+
+.cross {
+    width: 50px;
+    height: 50px;
+    background-image: 
+    linear-gradient(to top left,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) calc(50% - 0.8px),
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0) calc(50% + 0.8px),
+        rgba(0,0,0,0) 100%),
+    linear-gradient(to top right,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) calc(50% - 0.8px),
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0) calc(50% + 0.8px),
+        rgba(0,0,0,0) 100%);
+}
+
+.circle {
+    display:inline-block;   /* add this */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: rgba(0, 0, 0, 0);
+}
+.field
+/*:not(.cirle.field, .cross.field)*/
+{
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    color: #fff;
+}
+
+
+/* .emptyField, .cirlce, .cross, div div {
+    
+    border-top: 1px solid  black;
+    border-left: 1px solid black;
+}*/
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 200% 200%;
+    background-image: repeating-linear-gradient(
+		-25deg,
+		#7a94b8 0%,
+		#deedde 15%,
+		#f2e6d9 30%,
+		#7a94b8 45%
+	);
+    animation: diagonal alternate 10s infinite;
+}
+html{
+    height: 100%;
+}
+
+@keyframes diagonal {
+    0% {background-position: 0% 50%}
+    100% {background-position: 40% 50%}
+}
