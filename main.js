@@ -66,6 +66,6 @@ function checkWin() {
 function win() {
     lockInput=true;
     console.log("Winner: " + winner);
-    alert(`${winner==1?"X":"O"} wins!`);
     document.getElementById("newGame").classList.add("bBtn");
+    setTimeout(()=>{alert(`${winner==1?"X":"O"} wins!`)},100);
 }
